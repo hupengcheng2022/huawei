@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./images/LOGO.png" type="image/png">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/web.css"/>
 </head>
 <body>
 <!--top-->
@@ -94,7 +95,8 @@
     <div class="nav">
         <div class="logo">
             <a href="index.html">
-                <img src="images/huawei_nav_logo.png" width="130"/>
+            	<!--width="130"-->
+                <img src="images/huawei_nav_logo.png" />
             </a>
         </div>
         <ul class="nav-menu">
@@ -103,11 +105,27 @@
             <li><a href="#">服务支持</a></li>
             <li><a href="#">合作伙伴与开发者</a></li>
             <li><a href="#">关于华为</a></li>
+            <li class="buy1"><a href="#">在线购买</a></li>
         </ul>
-        <div class="burger">
-            <div class="top-line"></div>
-            <div class="middle-line"></div>
-            <div class="bottom-line"></div>
+        <div class="web_top">
+            <div>
+                <div>
+                    <img src="./images/top1.png" alt="集团网站">
+                </div>
+                <p>集团网站</p>
+            </div>
+            <div>
+                <div>
+                    <img src="./images/top2.png" alt="选择区域/语言">
+                </div>
+                <p>选择区域/语<br/>言</p>
+            </div>
+            <div>
+                <div>
+                    <img src="./images/top3.png" alt="登录">
+                </div>
+                <p>登录</p>
+            </div>
         </div>
         <div class="buy">
             <i class="iconfont">&#xe61e;</i>
@@ -120,8 +138,24 @@
             <div class="search-box">
                 <input type="search" placeholder="请输入关键词">
                 <i class="iconfont">&#xe60c;</i>
+                <span class="close">×</span>
             </div>
-            <span class="close">×</span>
+            <div class="hot">
+                <p>热门搜索：</p>
+                <p>Mate 40系列手机</p>
+                <p>手机</p>
+                <p>p40</p>
+                <p>手机助手</p>
+                <p>耳机</p>
+                <p>平板</p>
+                <p>华为认证</p>
+                <p>5G</p>
+            </div>
+        </div>
+        <div class="burger">
+            <div class="top-line"></div>
+            <div class="middle-line"></div>
+            <div class="bottom-line"></div>
         </div>
     </div>
     <div class="car">
@@ -131,6 +165,7 @@
         </ul>
     </div>
     <div class="products">
+
         <!--560px h-->
         <div class="classification">
             <div>
@@ -203,21 +238,29 @@
             <span>×</span>
         </div>
     </div>
+	<div class="service">
+		<img src="images/popup-icon.jpg" alt="service" />
+	</div>
+	<div class="back_top">
+		<i class="iconfont">&#xe689;</i>
+	</div>
 <!--nav-->
 <!--轮播图-->
     <div class="wrap">
         <!--图片-->
         <ul class="list">
+            <li class="item"><span class="button3">了解更多</span><a href="#"><img src="images/Carousel-map2.jpg"/></a></li>
             <li class="item"><span class="button1">精彩回顾</span><a href="#"><img src="images/Carousel-map1.png"/></a></li>
             <li class="item"><span class="button2">了解更多</span><a href="#"><img src="images/Carousel-map3.jpg"/></a></li>
             <li class="item"><span class="button3">了解更多</span><a href="#"><img src="images/Carousel-map2.jpg"/></a></li>
+            <li class="item"><span class="button1">精彩回顾</span><a href="#"><img src="images/Carousel-map1.png"/></a></li>
         </ul>
         <!--2.控制器-->
         <div class="prev"><i class="iconfont">&#xe623;</i></div>
         <div class="next"><i class="iconfont">&#xe625;</i></div>
         <!--3.计数器-->
         <div class="count">
-            <div>
+            <div class="active">
                 <span></span>
             </div>
             <div>
@@ -227,17 +270,6 @@
                 <span></span>
             </div>
         </div>
-        <!--<div class="button">
-            <div class="button1">
-                精彩回顾
-            </div>
-            <div class="button2">
-                了解更多
-            </div>
-            <div class="button3">
-                了解更多
-            </div>
-        </div>-->
     </div>
 <!--轮播图-->
 <!--推荐信息-->
@@ -494,4 +526,5 @@
 <script src="js/Carousel.js" type="text/javascript"></script>
 <script src="js/lazyLoading.js" type="text/javascript"></script>
 <script src="js/foorter.js" type="text/javascript"></script>
+<script src="js/backTop.js" type="text/javascript"></script>
 </html>

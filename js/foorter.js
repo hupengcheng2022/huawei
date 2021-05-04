@@ -3,7 +3,7 @@ const searchBox1=document.querySelector(".searchBox1");
 const footer=document.querySelector(".footer");
 const news=document.querySelector(".news");
 const input1=document.querySelector(".search-box1");
-const close1=document.querySelector(".close");
+const close2=document.querySelector(".close");
 search1.addEventListener("click",()=>{
     search1.style.transform="scale(0)";
     searchBox1.style.transform="scale(1,1)";
@@ -17,7 +17,7 @@ footer.addEventListener("click",()=>{
     search1.style.transform="scale(1)";
     searchBox1.style.transform="scale(0)";
 });
-close1.addEventListener("click",()=>{
+close2.addEventListener("click",()=>{
     search1.style.transform="scale(1)";
     searchBox1.style.transform="scale(0)";
 });

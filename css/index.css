@@ -152,6 +152,9 @@
     border-top: 1px solid rgb(230,230,230);
     overflow: hidden;
 }
+.nav .logo img{
+	width: 130px;
+}
 .nav ul{
     list-style-type: none;
 }
@@ -160,6 +163,9 @@
     justify-content: space-between;
     margin-left: 100px;
     transition: all 0.5s;
+}
+.nav-menu .buy{
+    display: none;
 }
 .nav-menu.open{
     display: flex;
@@ -173,12 +179,15 @@
     text-decoration: none;
     color: rgb(51,51,51);
 }
+.nav .web_top{
+    display: none;
+}
 .nav .buy i{
     font-size: 24px;
     vertical-align: middle;
     color: rgb(51,51,51);
 }
-.nav .buy{
+.nav>.buy{
     cursor: pointer;
     padding: 25px 0 25px 0;
     transition: all 0.5s;
@@ -194,6 +203,9 @@
 .nav .buy.open span:after{
     content: "∧";
     color: rgb(51,51,51);
+}
+.nav .burger,.nav .searchBox .hot{
+    display: none;
 }
 .car ul{
     display: inline-block;
@@ -233,14 +245,14 @@
 }
 .searchBox{
     position: absolute;
-    right: 20px;
+    right: 70px;
     transform: scale(0);
     transition: all 0.5s;
 }
 .search-box i{
     position: absolute;
     top: 10px;
-    right: 40px;
+    right: 10px;
     font-size: 30px;
     /*vertical-align: middle;*/
     color: rgb(128,128,128);
@@ -259,8 +271,11 @@
 .search-box input:focus{
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
-.searchBox span{
+.searchBox .close{
+    position: absolute;
     font-size: 40px;
+    right: -40px;
+    top: -6px;
     color: rgb(128,128,128);
     vertical-align: middle;
     font-weight: lighter;
@@ -325,7 +340,7 @@
 }
 /*轮播图*/
 .wrap{
-    width: 1349px;
+    max-width: 1349px;
     margin: 0 auto;
     height: 456px;
     position: relative;/*相对定位*/
@@ -336,8 +351,10 @@
     display: block;
 }
 .wrap .list{
-    width: 5999px;
+    width: 6745px;
+    margin-left: -1349px;
     list-style-type: none;
+    position: relative;
 }
 .wrap .list .item a img{
     position: relative;
@@ -889,3 +906,32 @@
     color: rgb(195,195,195);
 }
 /*底部*/
+/*固定*/
+.service img{
+	position: fixed;
+	z-index: 1;
+	top: 83.5%;
+	right: 0;
+	width: 40px;
+	opacity: 0.8;
+	filter: none;
+}
+.back_top{
+	position: fixed;
+	z-index: 1;
+	top: 90.5%;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	background-color: #000000;
+	opacity: 0;
+	filter: none;
+    text-align: center;
+    cursor: pointer;
+}
+.back_top i{
+	color: white;
+    font-size: 36px;
+    vertical-align: middle;
+}
+/*固定*/
