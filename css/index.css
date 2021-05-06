@@ -460,6 +460,9 @@
     width: 1160px;
     margin: 0 auto;
 }
+.recommend .list_mob,.recommend .recommend_img_mob,.video_mob{
+    display: none;
+}
 .recommend .recommend_top{
     text-align: center;
     padding: 80px 0 75px 0;

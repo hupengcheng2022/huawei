@@ -41,6 +41,9 @@ search.addEventListener("click",()=>{
 input.children[0].addEventListener("click",()=>{
     event.stopPropagation();
 });
+searchBox.children[1].addEventListener("click",()=>{
+    event.stopPropagation();
+});
 input.children[1].addEventListener("click",()=>{
     event.stopPropagation();
 });
@@ -64,12 +67,14 @@ close.addEventListener("click",()=>{
     }
  });
 close1.addEventListener("click",()=>{
-    navMenu.style.display=`flex`;
-    navMenu.style.justify=`space-between`;
-    navMenu.style.transform="scale(1)";
-    buy.style.transform="scale(1)";
-    search.style.transform="scale(1)";
-    searchBox.style.transform="scale(0)";
+    if (w>460){
+        navMenu.style.display=`flex`;
+        navMenu.style.justify=`space-between`;
+        navMenu.style.transform="scale(1)";
+        buy.style.transform="scale(1)";
+        search.style.transform="scale(1)";
+        searchBox.style.transform="scale(0)";
+    }
 });
 /*搜索框*/
 /*导航条*/
@@ -124,3 +129,106 @@ burger.onclick=function () {
     }
 };
 /*导航条*/
+const nav=document.querySelector(".nav");
+if (w>460) {
+    var scrollFunc = function (e) {
+        var e = e || window.event;
+        if (e.wheelDelta) {
+            if (e.wheelDelta > 0) { //当鼠标滚轮向上滚动时
+                nav.style.position="sticky";
+                nav.style.top="0";
+                nav.style.zIndex="1";
+                nav.style.transition="all 0.5s";
+            }
+            if (e.wheelDelta < 0) { //当鼠标滚轮向下滚动时
+                nav.style.position="sticky";
+                nav.style.top="-100%";
+                nav.style.zIndex="1";
+                nav.style.transition="all 0.5s";
+            }
+        } else if (e.detail) {
+            if (e.detail < 0) { //当鼠标滚轮向上滚动时
+                nav.style.position="sticky";
+                nav.style.top="0";
+                nav.style.zIndex="1";
+                nav.style.transition="all 0.5s";
+            }
+            if (e.detail > 0) { //当鼠标滚轮向下滚动时
+                nav.style.position="sticky";
+                nav.style.top="-100%";
+                nav.style.zIndex="1";
+                nav.style.transition="all 0.5s";
+            }
+        }
+    };
+    window.addEventListener("DOMMouseScroll", scrollFunc); // 给页面绑定鼠标滚轮事件，针对Google，mousewheel非标准事件已被弃用，请使用 wheel事件代替
+    window.addEventListener("wheel", scrollFunc);  // ie不支持wheel事件，若一定要兼容，可使用mousewheel
+    window.addEventListener("mousewheel", scrollFunc);
+}else{
+    var startx, starty;
+    //获得角度
+    function getAngle(angx, angy) {
+        return Math.atan2(angy, angx) * 180 / Math.PI;
+    }
+
+    //根据起点终点返回方向 1向上 2向下 3向左 4向右 0未滑动
+    function getDirection(startx, starty, endx, endy) {
+        var angx = endx - startx;
+        var angy = endy - starty;
+        var result = 0;
+
+        //如果滑动距离太短
+        if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
+            return result;
+        }
+
+        var angle = getAngle(angx, angy);
+        if (angle >= -135 && angle <= -45) {
+            result = 1;
+        } else if (angle > 45 && angle < 135) {
+            result = 2;
+        } else if ((angle >= 135 && angle <= 180) || (angle >= -180 && angle < -135)) {
+            result = 3;
+        } else if (angle >= -45 && angle <= 45) {
+            result = 4;
+        }
+
+        return result;
+    }
+    //手指接触屏幕
+    document.addEventListener("touchstart", function(e) {
+        startx = e.touches[0].pageX;
+        starty = e.touches[0].pageY;
+    }, false);
+    //手指离开屏幕
+    document.addEventListener("touchend", function(e) {
+        var endx, endy;
+        endx = e.changedTouches[0].pageX;
+        endy = e.changedTouches[0].pageY;
+        var direction = getDirection(startx, starty, endx, endy);
+        switch (direction) {
+            case 0:
+                // alert("未滑动！");
+                break;
+            case 1:
+                nav.style.position="sticky";
+                nav.style.top="-100%";
+                nav.style.zIndex="6";
+                nav.style.transition="all 0.5s";
+                break;
+            case 2:
+                nav.style.position="sticky";
+                nav.style.top="0";
+                nav.style.zIndex="6";
+                nav.style.transition="all 0.5s";
+                break;
+            case 3:
+                // alert("向左！");
+                break;
+            case 4:
+                // alert("向右！");
+                break;
+            default:
+        }
+    }, false);
+}

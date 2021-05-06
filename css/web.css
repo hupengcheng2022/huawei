@@ -1,8 +1,8 @@
 @media only screen and (max-width: 460px) {
 	/*导航*/
-	body{
+/*	body{
 		overflow-x: hidden;
-	}
+	}*/
 	.top{
 		display:none;
 	}
@@ -32,6 +32,7 @@
 		margin-top: 3.5px;
 	}
 	.nav .searchBox{
+		position: fixed;
 		transform: scale(1);
 		width: 100%;
 		height: 100%;
@@ -69,6 +70,13 @@
 		border-bottom: 1px solid rgb(227,227,227);
 		font-weight: bold;
 		font-size: 14px;
+		cursor: pointer;
+	}
+	.nav .searchBox .hot span{
+		display: block;
+		padding: 10px 0;
+		border-bottom: 1px solid rgb(227,227,227);
+		font-size: 14px;
 	}
 	.nav .searchBox .search-box input{
 		width: 80%;
@@ -84,10 +92,10 @@
 	}
 	.nav .web_top{
 		display: block;
-		position: absolute;
+		position: fixed;
 		left: 100%;
 		top: 70%;
-		z-index: 3;
+		z-index: 8;
 		color: black;
 		width: 100%;
 		text-align: center;
@@ -114,8 +122,8 @@
 		line-height: 50px;
 	}
 	.nav .nav-menu{
-        position: absolute;
-        z-index: 2;
+        position: fixed;
+        z-index: 6;
         top: 80px;
         right: -100%;
         bottom: 0;
@@ -160,7 +168,6 @@
 	/*轮播图*/
 	.wrap{
 		width: 100%;
-		height: 415.05px;
 	}
 	.wrap .list{
 		width: 500vm;
@@ -213,11 +220,185 @@
 		background: none;
 		border: 1px solid white;
 		cursor: pointer;
+		margin: 0 6px;
 	}
 	.wrap .count div.active{
 		background-color: white;
 	}
 	.wrap .count div span{
 		display: none;
+	}
+	.recommend{
+		width: 100%;
+		position: relative;
+	}
+	.recommend .list_mob,.recommend .recommend_img_mob,.video_mob{
+		display: block;
+	}
+	.recommend .recommend_top{
+		padding: 30px 0;
+	}
+	.recommend .recommend_top h1{
+		font-size: 26px;
+	}
+	.recommend .recommend_img{
+		display: none;
+	}
+	.recommend .wrap_mob{
+		overflow: hidden;
+		margin: 0 14px;
+		position: relative;
+	}
+	.recommend .wrap_mob>div{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+	}
+	.recommend .wrap_mob .list_mob{
+		list-style-type: none;
+	}
+	.recommend .wrap_mob .list_mob .item{
+		float: left;
+		position: relative;
+	}
+	.recommend .wrap_mob .list_mob .item>span{
+		width: 100%;
+		color: white;
+		position: absolute;
+		top: 174px;
+		left: 16px;
+		z-index: 1;
+	}
+	.recommend .wrap_mob .list_mob .item>span>span{
+		font-weight: bold;
+	}
+	.recommend .count_mob{
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		text-align: center;
+	}
+	.recommend .count_mob div{
+		display: inline-block;
+		width: 9px;
+		height: 9px;
+		border-radius: 9px;
+		background: none;
+		border: 1px solid white;
+		cursor: pointer;
+		margin: 0 6px;
+	}
+	.recommend .count_mob div.active{
+		background-color: white;
+	}
+	.recommend .count_mob div span{
+		display: none;
+	}
+	.recommend .recommend_img_mob{
+		/*overflow: hidden;*/
+		margin: 10px auto 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.recommend .recommend_img_mob div{
+		margin: 10px auto;
+		background-color: rgb(245,245,245);
+	}
+	.recommend .recommend_img_mob div>p{
+		margin: 10px 0 10px 10px;
+		font-weight: lighter;
+		font-size: 14px;
+	}
+	.recommend .recommend_img_mob div>p:last-child{
+		font-weight: bold;
+	}
+	.video{
+		display: none;
+	}
+	.video_mob{
+		margin-top: 40px;
+		cursor: pointer;
+	}
+	.news{
+		margin: 0;
+	}
+	.news .new_top{
+		padding: 30px 0;
+	}
+	.news .new_top h1{
+		font-size: 26px;
+	}
+	.news .news_content{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.news .news_content div{
+		margin-bottom: 14px;
+	}
+	.news .news_content .contentNews{
+		height: auto;
+	}
+	.news .news_content .contentNews .contentNews1{
+		padding-bottom: 0;
+	}
+	.news .newsButton .news_button{
+		width: 140px;
+		height: 36px;
+		margin: 20px 20px 30px 20px;
+	}
+	.footer{
+		padding-top: 10px;
+	}
+	.footer .footer_top{
+		width: 100%;
+	}
+	.footer .footer_top a,.footer .footer_top div .search1{
+		display: none;
+	}
+	.footer .footer_top div .searchBox1{
+		width: 100%;
+		transform: scale(1);
+		padding:0 0 20px 0;
+		border-bottom: 1px solid rgb(232,232,232);
+	}
+	.footer .footer_top div .searchBox1 .search-box1,
+	.footer .footer_top div .searchBox1 .search-box1 input{
+		width: 96%;
+		margin: 0 auto;
+	}
+	.footer .footer_top div .searchBox1 .search-box1 i{
+		left: 84%;
+	}
+	.footer .footer_top div .searchBox1 .close{
+		display: none;
+	}
+	.footer .footer_content{
+		display: none;
+	}
+	.footer .footer_content1,.footer .footer_content2{
+		width: 100%;
+		height: auto;
+	}
+	.footer .footer_content1{
+		flex-wrap: wrap;
+		text-align: center;
+	}
+	.footer .footer_content1>div:first-child{
+		width: 92%;
+		margin: 10px auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.footer .footer_content1>div:first-child span{
+		text-align: center;
+		color: black;
+		margin: 2%;
+	}
+	.footer .footer_content1>div:last-child{
+		margin: 20px auto 0 auto;
 	}
 }
