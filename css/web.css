@@ -9,6 +9,7 @@
 	.nav{
 		width: 100vm;
 		box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+        z-index: 3;
 	}
 	.nav .buy{
 		display: none;
@@ -95,7 +96,7 @@
 		position: fixed;
 		left: 100%;
 		top: 70%;
-		z-index: 8;
+		z-index: 6;
 		color: black;
 		width: 100%;
 		text-align: center;
