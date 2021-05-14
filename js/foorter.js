@@ -1,7 +1,7 @@
 const search1=document.querySelector(".search1");
-const searchBox1=document.querySelector(".searchBox1");
-const footer=document.querySelector(".footer");
-const news=document.querySelector(".news");
+// const searchBox1=document.querySelector(".searchBox1");
+// const footer=document.querySelector(".footer");
+// const news=document.querySelector(".news");
 const input1=document.querySelector(".search-box1");
 const close2=document.querySelector(".close");
 search1.addEventListener("click",()=>{
