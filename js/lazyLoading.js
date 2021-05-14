@@ -22,4 +22,5 @@ function loadImg(el) {
 }
 window.onscroll = function () { //onscroll()在滚动条滚动的时候触发
     check();
+    back();
 };

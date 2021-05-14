@@ -32,9 +32,9 @@ backTop.onclick=function (){
 
     }
 };
-window.onscroll = function () { //onscroll()在滚动条滚动的时候触发
+/*window.onmousewheel = function () { //onscroll()在滚动条滚动的时候触发
     back();
-};
+};*/
 window.addEventListener("touchstart",()=>{
     back();
 });
